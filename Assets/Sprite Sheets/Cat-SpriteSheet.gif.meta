@@ -1,0 +1,225 @@
+fileFormatVersion: 2
+guid: b06366959c16c384796fa3ac9bd4b337
+timeCreated: 1460914148
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Cat-Idle-1
+    21300002: Cat-Idle-2
+    21300004: Cat-Run-1
+    21300006: Cat-Run-2
+    21300008: Cat-Run-3
+    21300010: Cat-Attack-1
+    21300012: Cat-Attack-2
+    21300014: Cat-Die-1
+    21300016: Cat-Die-2
+    21300018: Cat-Die-3
+    21300020: Cat-Jump
+    21300022: Cat-AltAttack-1
+    21300024: Cat-AltAttack-2
+    21300026: Cat-AltAttack-3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Cat-Idle-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 49
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Idle-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 49
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Run-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 407
+        width: 55
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Run-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 406
+        width: 59
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Run-3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 407
+        width: 59
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Attack-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 364
+        width: 49
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Attack-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 364
+        width: 55
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Die-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 321
+        width: 49
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Die-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 321
+        width: 61
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Die-3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 321
+        width: 62
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-Jump
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 55
+        height: 18
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-AltAttack-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 237
+        width: 49
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-AltAttack-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 237
+        width: 51
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Cat-AltAttack-3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 237
+        width: 53
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

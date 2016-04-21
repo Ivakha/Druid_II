@@ -1,0 +1,393 @@
+fileFormatVersion: 2
+guid: ef60533a14bb56e4b814e4d9c2b0491b
+timeCreated: 1460912377
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Druid-Idle-1
+    21300002: Druid-Idle-2
+    21300004: Druid-Walk-1
+    21300006: Druid-Walk-2
+    21300008: Druid-Walk-3
+    21300010: Druid-Walk-4
+    21300012: Druid-Walk-5
+    21300014: Druid-Walk-6
+    21300016: Druid-Walk-7
+    21300018: Druid-Cast-1
+    21300020: Druid-Cast-2
+    21300022: Druid-Cast-3
+    21300024: Druid-Cast-4
+    21300026: Druid-Cast-5
+    21300028: Druid-Cast-6
+    21300030: Druid-Cast-7
+    21300032: Druid-Cast-8
+    21300034: Druid-Jump
+    21300036: Druid-Fall
+    21300038: Druid-AltCast-1
+    21300040: Druid-AltCast-2
+    21300042: Druid-Die-1
+    21300044: Druid-Die-2
+    21300046: Druid-Die-3
+    21300048: Druid-Die-4
+    21300050: Druid-Climb-1
+    21300052: Druid-Climb-2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Druid-Idle-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Idle-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 24
+        height: 38
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 22
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Walk-7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 319
+        width: 24
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 24
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 24
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-6
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 24
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Cast-8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Jump
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 24
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Fall
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 25
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-AltCast-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 22
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-AltCast-2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 192
+        width: 22
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Die-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 25
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Die-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 25
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Die-3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 25}
+        - {x: -20, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 6}
+        - {x: -5, y: 25}
+    - name: Druid-Die-4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 10}
+        - {x: -19, y: 7}
+        - {x: -20, y: 6}
+        - {x: -20, y: 0}
+        - {x: 20, y: 0}
+        - {x: 20, y: 5}
+        - {x: 14, y: 10}
+    - name: Druid-Climb-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 23
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Druid-Climb-2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 23
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

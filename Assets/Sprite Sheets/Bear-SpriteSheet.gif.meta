@@ -1,0 +1,270 @@
+fileFormatVersion: 2
+guid: b0ac4aa7477314748806e8b0a19f7d31
+timeCreated: 1460964726
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bear-Idle-1
+    21300002: Bear-Idle-2
+    21300004: Bear-Walking-1
+    21300006: Bear-Walking-2
+    21300008: Bear-Walking-3
+    21300010: Bear-Walking-4
+    21300012: Bear-Attack-1
+    21300014: Bear-Attack-2
+    21300016: Bear-Die-1
+    21300018: Bear-Die-2
+    21300020: Bear-Die-3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bear-Idle-1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 448
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 35}
+        - {x: -29, y: 32}
+        - {x: -29, y: 0}
+        - {x: 22, y: 0}
+        - {x: 29, y: 10}
+        - {x: 29, y: 31}
+        - {x: 26, y: 35}
+    - name: Bear-Idle-2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 448
+        width: 58
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 33}
+        - {x: -29, y: 30}
+        - {x: -29, y: 0}
+        - {x: 23, y: 0}
+        - {x: 29, y: 10}
+        - {x: 29, y: 30}
+        - {x: 27, y: 33}
+    - name: Bear-Walking-1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 384
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 35}
+        - {x: -24, y: 35}
+        - {x: -29, y: 28}
+        - {x: -29, y: 5}
+        - {x: -27, y: 0}
+        - {x: 24, y: 0}
+        - {x: 29, y: 9}
+        - {x: 29, y: 28}
+    - name: Bear-Walking-2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 384
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 35}
+        - {x: -29, y: 6}
+        - {x: -27, y: 0}
+        - {x: 16, y: 0}
+        - {x: 29, y: 11}
+        - {x: 29, y: 35}
+    - name: Bear-Walking-3
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 384
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 11}
+        - {x: 29, y: 35}
+        - {x: -26, y: 35}
+        - {x: -29, y: 30}
+        - {x: -29, y: 2}
+        - {x: -28, y: 0}
+        - {x: -12, y: 0}
+        - {x: -11, y: 2}
+        - {x: -5, y: 0}
+        - {x: 17, y: 0}
+    - name: Bear-Walking-4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 384
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 35}
+        - {x: -29, y: 6}
+        - {x: -27, y: 0}
+        - {x: 16, y: 0}
+        - {x: 29, y: 11}
+        - {x: 29, y: 35}
+    - name: Bear-Attack-1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 320
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 7}
+        - {x: 29, y: 12}
+        - {x: 29, y: 26}
+        - {x: 27, y: 29}
+        - {x: 16, y: 35}
+        - {x: -21, y: 35}
+        - {x: -29, y: 28}
+        - {x: -29, y: 0}
+        - {x: 7, y: 0}
+        - {x: 17, y: 9}
+        - {x: 17, y: 14}
+        - {x: 16, y: 16}
+    - name: Bear-Attack-2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 319
+        width: 59
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.5, y: 35}
+        - {x: -29.5, y: 33}
+        - {x: -29.5, y: 0}
+        - {x: 29.5, y: 0}
+        - {x: 29.5, y: 35}
+    - name: Bear-Die-1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 256
+        width: 58
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 35}
+        - {x: -29, y: 32}
+        - {x: -29, y: 0}
+        - {x: 22, y: 0}
+        - {x: 29, y: 10}
+        - {x: 29, y: 31}
+        - {x: 26, y: 35}
+    - name: Bear-Die-2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 255
+        width: 58
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 33}
+        - {x: -29, y: 26}
+        - {x: -29, y: 0}
+        - {x: 27, y: 0}
+        - {x: 29, y: 2}
+        - {x: 29, y: 33}
+    - name: Bear-Die-3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 257
+        width: 57
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.5, y: 27}
+        - {x: -19.5, y: 27}
+        - {x: -28.5, y: 19}
+        - {x: -28.5, y: 0}
+        - {x: 28.5, y: 0}
+        - {x: 28.5, y: 16}
+        - {x: 25.5, y: 19}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
