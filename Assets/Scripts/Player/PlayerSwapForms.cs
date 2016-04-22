@@ -3,30 +3,34 @@ using System.Collections;
 
 public class PlayerSwapForms : MonoBehaviour {
 
-    [SerializeField]
+    [SerializeField, Tooltip("Place objects to enable and disable when shapeshifting. Each of them must contain Sprite Renderer, Animator and Collider")]
     GameObject[] formsObjects;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Place Animator components of formObject here")]
     Animator[] formsAnimators;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Set speed values of different forms here")]
     float[] formsSpeeds;
 
-    [SerializeField]
+    [SerializeField, Tooltip("Set backwards speed values of different forms here")]
+    float[] formsBackwardSpeeds;
+
+    [SerializeField, Tooltip("Set jump force values of different forms here")]
     float[] formsJumpForces;
 
     [SerializeField]
     PlayerController playerController;
 
-    int currentForm;
+    public int currentForm { get; set; }
 
     void Awake()
     {
-        playerController.UpdateForm(formsAnimators[0], formsSpeeds[0], formsJumpForces[0]);
+        playerController.UpdateForm(formsAnimators[0], formsSpeeds[0], formsBackwardSpeeds[0], formsJumpForces[0]);
         currentForm = 0;
     }
 
-    void Update () {
+    void Update ()
+    {
         if (Input.GetButtonDown("DruidForm") || Input.GetButtonDown("CatForm"))
         {
             int i = -1;
@@ -40,7 +44,7 @@ public class PlayerSwapForms : MonoBehaviour {
                 foreach (GameObject form in formsObjects)
                     form.SetActive(false);
                 formsObjects[i].SetActive(true);
-                playerController.UpdateForm(formsAnimators[i], formsSpeeds[i], formsJumpForces[i]);
+                playerController.UpdateForm(formsAnimators[i], formsSpeeds[i], formsBackwardSpeeds[i], formsJumpForces[i]);
             }
         }
     }

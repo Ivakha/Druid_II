@@ -321,6 +321,9 @@ MonoBehaviour:
   formsSpeeds:
   - 5
   - 8
+  formsBackwardSpeeds:
+  - 2
+  - 4
   formsJumpForces:
   - 800
   - 1200
@@ -370,6 +373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 1217199988}
   rigidbody2D: {fileID: 498091483}
+  camera: {fileID: 1959891491}
+  playerSwapForms: {fileID: 498091479}
 --- !u!1 &710166315
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 498091480}
   dampTime: 0.15
+  maxScreenPoint: 0.52
   camera: {fileID: 1959891491}
 --- !u!81 &1959891488
 AudioListener:

@@ -9,6 +9,9 @@ public class SmoothCameraController : MonoBehaviour
     [SerializeField]
     float dampTime = 0.15f;
 
+    [SerializeField, Range(0.0f, 1.0f), /*Tooltip("")*/]
+    float maxScreenPoint = 0.7f;
+
     [SerializeField]
     new Camera camera;
 
@@ -26,9 +29,22 @@ public class SmoothCameraController : MonoBehaviour
             //transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
 
             #endregion
-            Vector3 position = (target.position + camera.ScreenToWorldPoint(Input.mousePosition)) / 2f;
+            #region Smooth camera follows the cursor
+            //Vector3 position = (target.position + camera.ScreenToWorldPoint(Input.mousePosition)) / 2f;
+            //Vector3 destination = new Vector3(position.x, position.y, -10);
+            //transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+            #endregion
+
+            #region Smooth camera follows the cursor with offsets
+
+            
+            Vector3 mousePos = Input.mousePosition * maxScreenPoint + new Vector3(Screen.width, Screen.height, 0f) * ((1f - maxScreenPoint) * 0.5f);
+            //Vector3 position = (target.position + GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition)) / 2f;
+            Vector3 position = (target.position + camera.ScreenToWorldPoint(mousePos)) / 2f;
             Vector3 destination = new Vector3(position.x, position.y, -10);
             transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+
+            #endregion
         }
     }
 }
