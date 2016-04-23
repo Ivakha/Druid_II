@@ -7,6 +7,10 @@ TagManager:
   - DruidShot
   - JumpTrigger
   - PatrolTrigger
+  - Enemy
+  - EnemyShot
+  - LifeBonus
+  - ManaBonus
   layers:
   - Default
   - TransparentFX

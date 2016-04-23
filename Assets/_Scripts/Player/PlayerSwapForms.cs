@@ -36,6 +36,7 @@ public class PlayerSwapForms : MonoBehaviour {
     {
         playerController.UpdateForm
             (formsAnimators[0], formsSpeeds[0], formsBackwardSpeeds[0], formsJumpForces[0], formsTimesBetweenAttacks[0], formsTimesWhileAttack[0]);
+        playerHealth.UpdateForm(formsAnimators[0]);
         currentForm = 0;
     }
 

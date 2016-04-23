@@ -20,6 +20,14 @@ public class PlayerController : MonoBehaviour
     new Camera camera;
 
     [SerializeField]
+    int mana = 5;
+
+    [SerializeField]
+    int manaPerShot = 1;
+
+    int currentMana;
+
+    [SerializeField]
     GameObject druidShot;
 
     [SerializeField]
@@ -43,6 +51,11 @@ public class PlayerController : MonoBehaviour
     bool isDruidForm = false;
     bool dontMove = false;
 
+    void Start()
+    {
+        currentMana = mana;
+    }
+
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
@@ -58,7 +71,7 @@ public class PlayerController : MonoBehaviour
             if (time > attackTime)
                 dontMove = false;
 
-        if (grounded && Input.GetButtonDown("Fire") && time > timeBetweenAttacks)
+        if (/*grounded && */Input.GetButtonDown("Fire") && time > timeBetweenAttacks)
             Attack();
 
         time += Time.deltaTime;
@@ -147,15 +160,28 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         time = 0f;
-        anim.SetTrigger("Attack-1");
-
-        rigidbody2D.velocity = new Vector2(0, 0);
-        dontMove = true;                                                            //player can't move while attack
+        if (grounded)
+        {
+            if (Random.Range(0,2) == 0)
+                anim.SetTrigger("Attack-1");
+            else
+                anim.SetTrigger("Attack-2");
+            
+            rigidbody2D.velocity = new Vector2(0, 0);
+            
+        }
+        dontMove = true; //player can't move while attack                                           
         //AnimatorClipInfo animatorClipInfo = anim.GetCurrentAnimatorClipInfo(0)[0];  //get current animation clip ...
         //attackTime = animatorClipInfo.clip.length;                                  //to get its lenght
         attackTime = formsTimesWhileAttack;
         if (isDruidForm)
-            DruidAttack();
+        {
+            if (currentMana >= manaPerShot)
+            {
+                currentMana -= manaPerShot;
+                DruidAttack();
+            }
+        }
         else AnimalAttack(); 
     }
 
@@ -176,6 +202,13 @@ public class PlayerController : MonoBehaviour
         Instantiate(druidShot, firePoint.position, Quaternion.Euler(0f, 0f, rotZ));
     }
 
+    void AddMana(int value)
+    {
+        currentMana += value;
+        if (currentMana > mana)
+            currentMana = mana;
+    }
+
     public void UpdateForm(Animator anim, float speed, float backwardSpeed, float jumpForce, float timeBetweenAttacks, float formsTimesWhileAttack)
         // Get parameters of current form (for example panther moves faster than druid)
     {
@@ -189,5 +222,18 @@ public class PlayerController : MonoBehaviour
             isDruidForm = true;
         else
             isDruidForm = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.tag)
+        {
+            case "ManaBonus":
+                int value = other.GetComponent<ManaBonus>().get_manaPoints();
+                AddMana(value);
+                break;
+            default:
+                break;
+        }
     }
 }
