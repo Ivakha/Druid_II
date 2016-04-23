@@ -27,6 +27,9 @@ public class PlayerSwapForms : MonoBehaviour {
     [SerializeField]
     PlayerController playerController;
 
+    [SerializeField]
+    PlayerHealth playerHealth;
+
     public int currentForm { get; set; }
 
     void Awake()
@@ -53,7 +56,10 @@ public class PlayerSwapForms : MonoBehaviour {
                 formsObjects[i].SetActive(true);
                 playerController.UpdateForm
                     (formsAnimators[i], formsSpeeds[i], formsBackwardSpeeds[i], formsJumpForces[i], formsTimesBetweenAttacks[i], formsTimesWhileAttack[i]);
+                playerHealth.UpdateForm(formsAnimators[i]);
             }
         }
     }
+
+
 }
