@@ -42,13 +42,15 @@ public class PlayerSwapForms : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetButtonDown("DruidForm") || Input.GetButtonDown("CatForm"))
+        if (Input.GetButtonDown("DruidForm") || Input.GetButtonDown("CatForm") || Input.GetButtonDown("BearForm"))
         {
             int i = -1;
             if (Input.GetButtonDown("DruidForm") && currentForm != 0)
                 i = 0;
             else if (Input.GetButtonDown("CatForm") && currentForm != 1)
                 i = 1;
+            else if (Input.GetButtonDown("BearForm") && currentForm != 2)
+                i = 2;
             if (i != -1)
             {
                 currentForm = i;

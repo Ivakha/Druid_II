@@ -133,6 +133,8 @@ public class EnemyController : MonoBehaviour {
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             Instantiate(shot, firePoint.position, Quaternion.Euler(0f, 0f, rotZ));
 
+            anim.SetTrigger("Attack-1");
+
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }

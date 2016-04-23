@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour {
 	
 	public void TakeDamage(int value)
     {
+        if (playerSwapForms.currentForm == 2)
+            return;
         currentHealth -= value;
         UpdateHealthBar();
         if (currentHealth <= 0 && !dead)
@@ -64,7 +66,6 @@ public class PlayerHealth : MonoBehaviour {
 
     void UpdateHealthBar()
     {
-        Debug.Log(currentHealth);
         healthBar.value = (float)currentHealth / health;
     }
 

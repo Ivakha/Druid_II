@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    #region Setting variables
+
     float jumpForce;
     float frontSpeed;
     float backwardSpeed;
@@ -42,6 +45,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerSwapForms playerSwapForms; //contains parameters of current form (speed, jumpForce etc.)
 
+    [SerializeField]
+    Slider manaBar;
+
     float time = 10f;
     float attackTime;
 
@@ -51,9 +57,12 @@ public class PlayerController : MonoBehaviour
     bool isDruidForm = false;
     bool dontMove = false;
 
+    #endregion
+
     void Start()
     {
         currentMana = mana;
+        manaBar.value = 1f;
     }
 
     void Update()
@@ -179,6 +188,7 @@ public class PlayerController : MonoBehaviour
             if (currentMana >= manaPerShot)
             {
                 currentMana -= manaPerShot;
+                UpdateManaBar();
                 DruidAttack();
             }
         }
@@ -207,6 +217,7 @@ public class PlayerController : MonoBehaviour
         currentMana += value;
         if (currentMana > mana)
             currentMana = mana;
+        UpdateManaBar();
     }
 
     public void UpdateForm(Animator anim, float speed, float backwardSpeed, float jumpForce, float timeBetweenAttacks, float formsTimesWhileAttack)
@@ -222,6 +233,11 @@ public class PlayerController : MonoBehaviour
             isDruidForm = true;
         else
             isDruidForm = false;
+    }
+
+    void UpdateManaBar()
+    {
+        manaBar.value = (float)currentMana / mana;
     }
 
     void OnTriggerEnter2D(Collider2D other)
