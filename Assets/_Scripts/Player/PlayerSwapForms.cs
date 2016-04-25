@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerSwapForms : MonoBehaviour {
 
@@ -25,10 +26,23 @@ public class PlayerSwapForms : MonoBehaviour {
     float[] formsTimesWhileAttack;
 
     [SerializeField]
+    float rageTime = 5f;
+
+    [SerializeField]
     PlayerController playerController;
 
     [SerializeField]
     PlayerHealth playerHealth;
+
+    [SerializeField]
+    Slider rageBar;
+
+    [SerializeField]
+    new AudioSource audio;
+
+    bool rageReady = true;
+    bool inRage = false;
+    float time;
 
     public int currentForm { get; set; }
 
@@ -38,31 +52,83 @@ public class PlayerSwapForms : MonoBehaviour {
             (formsAnimators[0], formsSpeeds[0], formsBackwardSpeeds[0], formsJumpForces[0], formsTimesBetweenAttacks[0], formsTimesWhileAttack[0]);
         playerHealth.UpdateForm(formsAnimators[0]);
         currentForm = 0;
+        time = rageTime;
+        rageBar.value = time / rageTime;
     }
 
     void Update ()
     {
+        int i = 0;
         if (Input.GetButtonDown("DruidForm") || Input.GetButtonDown("CatForm") || Input.GetButtonDown("BearForm"))
         {
-            int i = -1;
+            i = -1;
             if (Input.GetButtonDown("DruidForm") && currentForm != 0)
                 i = 0;
             else if (Input.GetButtonDown("CatForm") && currentForm != 1)
                 i = 1;
-            else if (Input.GetButtonDown("BearForm") && currentForm != 2)
+            else if (Input.GetButtonDown("BearForm") && currentForm != 2 && rageReady)
+            {
                 i = 2;
+                rageReady = false;
+                time = rageTime;
+                inRage = true;
+            }
             if (i != -1)
             {
-                currentForm = i;
-                foreach (GameObject form in formsObjects)
-                    form.SetActive(false);
-                formsObjects[i].SetActive(true);
-                playerController.UpdateForm
-                    (formsAnimators[i], formsSpeeds[i], formsBackwardSpeeds[i], formsJumpForces[i], formsTimesBetweenAttacks[i], formsTimesWhileAttack[i]);
-                playerHealth.UpdateForm(formsAnimators[i]);
+                ChangeForm(i);
             }
+        }
+
+        if (inRage)
+        {
+            if (currentForm != 2)
+            {
+                inRage = false;
+                time = 0;
+                UpdateRageBar();
+            }
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                time = 0;
+                inRage = false;
+                ChangeForm(i);
+            }
+            UpdateRageBar();
         }
     }
 
+    void ChangeForm(int i)
+    {
+        currentForm = i;
+        foreach (GameObject form in formsObjects)
+            form.SetActive(false);
+        formsObjects[i].SetActive(true);
+        playerController.UpdateForm
+            (formsAnimators[i], formsSpeeds[i], formsBackwardSpeeds[i], formsJumpForces[i], formsTimesBetweenAttacks[i], formsTimesWhileAttack[i]);
+        playerHealth.UpdateForm(formsAnimators[i]);
+        audio.Play();
+    }
+
+    void UpdateRageBar()
+    {
+        rageBar.value = time / rageTime;
+    }
+
+    public void TurnOffSounds()
+    {
+        audio.enabled = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "RageBonus")
+        {
+            if(!inRage)
+                rageReady = true;
+            time = rageTime;
+            UpdateRageBar();
+        }
+    }
 
 }

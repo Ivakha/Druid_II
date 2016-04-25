@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b13739d1ba75ec458c757ebcbbfa892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   rigidbody2D: {fileID: 5047026}
 --- !u!114 &11497948
 MonoBehaviour:
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1bea715e90bb149a54a92c8822d8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
 --- !u!212 &21251136
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     GameObject claws;
 
     [SerializeField]
+    GameObject bearClaws;
+
+    [SerializeField]
     Transform attackPoint;
 
     [SerializeField]
@@ -47,6 +50,18 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     Slider manaBar;
+
+    [SerializeField]
+    AudioSource piyClip;
+
+    [SerializeField]
+    AudioSource clawsClip;
+
+    [SerializeField]
+    AudioSource fallClip;
+
+    [SerializeField]
+    GameController gameController;
 
     float time = 10f;
     float attackTime;
@@ -56,6 +71,10 @@ public class PlayerController : MonoBehaviour
     bool jump = false;
     bool isDruidForm = false;
     bool dontMove = false;
+    int playerLayer;
+    int groundLayer;
+    bool isIgnoringGround = false;
+    float fallTime = 0;
 
     #endregion
 
@@ -63,6 +82,11 @@ public class PlayerController : MonoBehaviour
     {
         currentMana = mana;
         manaBar.value = 1f;
+
+        playerLayer = LayerMask.NameToLayer("Player");
+        groundLayer = LayerMask.NameToLayer("Ground");
+
+        fallClip.enabled = false;
     }
 
     void Update()
@@ -72,7 +96,16 @@ public class PlayerController : MonoBehaviour
         //draws a line between player and groundCheck. If it hits something - player is on the ground
 
         if (Input.GetButtonDown("Jump") && grounded)
-            jump = true;
+        {
+            if (Input.GetKey(KeyCode.S)/* && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)*/)
+            {
+                StartCoroutine(IgnoreLayerForTime());
+            }
+            else
+            {
+                jump = true;
+            }
+        }
 
         #region Attack
 
@@ -115,9 +148,11 @@ public class PlayerController : MonoBehaviour
         #region Speed
 
         float currentSpeed = frontSpeed;
-        if (h > 0 && !facingRight || h < 0 && facingRight) // if player moves backwards his speed is slower
+        if (h > 0 && !facingRight || h < 0 && facingRight && grounded) // if player moves backwards his speed is slower
             currentSpeed = backwardSpeed;
         rigidbody2D.velocity = new Vector2(h * currentSpeed, rigidbody2D.velocity.y);
+        //if (!grounded && !isDruidForm)
+        //    rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x / 2, rigidbody2D.velocity.y);
 
         #endregion
 
@@ -133,29 +168,66 @@ public class PlayerController : MonoBehaviour
 
         #region Animations
 
-        if (grounded)
+        if (grounded && !anim.GetBool("IsJumping"))
         {
+            //Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, false);
             bool walking = h != 0f;
             anim.SetBool("IsWalking", walking);
-
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsFalling", false);
         }
         else
         {
-            if (rigidbody2D.velocity.y < 0) // velocity.y < 0 means we are moving down - falling
+
+            if (rigidbody2D.velocity.y <= 0) // velocity.y < 0 means we are moving down - falling
             {
-                anim.SetBool("IsJumping", false);
-                anim.SetBool("IsFalling", true);
+                if (isIgnoringGround)
+                {
+                    isIgnoringGround = false;
+                    anim.SetBool("IsJumping", false);
+                    anim.SetBool("IsFalling", true);
+                    Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, false);
+                    fallTime = 0;
+                }
+                else
+                {
+                    fallTime += Time.fixedDeltaTime;
+                    
+                    anim.SetBool("IsFalling", true);
+                }
+                if(fallTime > 2.5f)
+                {
+                    clawsClip.enabled = false;
+                    piyClip.enabled = false;
+                    playerSwapForms.TurnOffSounds();
+                    fallClip.enabled = true;
+                    if (fallTime > 3.5f)
+                    {
+                        gameController.GameOver();
+                    }
+                }
             }
             else // if velocity.y > 0
             {
-                anim.SetBool("IsJumping", true);
-                anim.SetBool("IsFalling", false);
+                fallTime = 0;
+                if (!isIgnoringGround)
+                {
+                    isIgnoringGround = true;
+                    anim.SetBool("IsJumping", true);
+                    anim.SetBool("IsFalling", false);
+                    Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, true);
+                }
             }
         }
 
         #endregion
+    }
+
+    IEnumerator IgnoreLayerForTime()
+    {
+        Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, true);
+        yield return new WaitForSeconds(0.5f);
+        Physics2D.IgnoreLayerCollision(playerLayer, groundLayer, false);
     }
 
     void Flip()
@@ -197,14 +269,20 @@ public class PlayerController : MonoBehaviour
 
     void AnimalAttack()
     {
+        clawsClip.Play();
         Vector3 rotation = Vector3.zero;
         if (!facingRight)
             rotation += new Vector3(0, 0, 180);
-        Instantiate(claws, attackPoint.position, Quaternion.Euler(rotation));
+        if (playerSwapForms.currentForm == 1)
+            Instantiate(claws, attackPoint.position, Quaternion.Euler(rotation));
+        if (playerSwapForms.currentForm == 2)
+            Instantiate(bearClaws, attackPoint.position, Quaternion.Euler(rotation));
     }
 
     void DruidAttack()
     {
+        piyClip.Play();
+
         Vector3 difference = camera.ScreenToWorldPoint(Input.mousePosition) - firePoint.position;
         difference.Normalize();
 

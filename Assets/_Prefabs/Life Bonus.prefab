@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e5266f16328a1045923bd635decee8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 2
+  healthPoints: 5
 --- !u!212 &21255912
 SpriteRenderer:
   m_ObjectHideFlags: 1
